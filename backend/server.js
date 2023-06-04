@@ -1,8 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const jwt = require('jsonwebtoken');
-const emailRoutes = require("./routes/mailRoutes.js");
+const emailRoutes = require("./routes/mailRoutes");
 
 dotenv.config(); // Charge les variables d'environnement à partir du fichier .env
 
@@ -20,7 +18,7 @@ app.use(express.json());
 
 app.use("/email", emailRoutes);
 app.use("/api/register", require('./routes/registerRoutes.js'));
-app.use("/api/login", require('./routes/registerRoutes.js'));
+app.use("/api/login", require('./routes/loginRoutes.js'));
 
 
 const PORT = process.env.PORT || 3000; // Utilisez la variable d'environnement PORT ou utilisez 3000 par défaut

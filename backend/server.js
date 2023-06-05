@@ -13,7 +13,7 @@ const corsOptions = {
     optionSuccessStatus: 200,
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/email", emailRoutes);
@@ -23,5 +23,5 @@ app.use("/api/login", require('./routes/loginRoutes.js'));
 
 const PORT = process.env.PORT || 3000; // Utilisez la variable d'environnement PORT ou utilisez 3000 par défaut
 app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });

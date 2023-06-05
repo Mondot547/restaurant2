@@ -5,7 +5,7 @@ const User = require('../model/UserModel');
 const router = express.Router();
 
 // Middleware pour la route d'inscription
-router.post('/', async (req, res, next) => {
+router.post('/register', async (req, res, next) => {
     try {
         const { email, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
